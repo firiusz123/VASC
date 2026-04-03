@@ -2,12 +2,9 @@
 % Zadanie eliminacyjne konkursu RCDC - Skrypt Inicjalizacyjny
 % Zespół (nazwa)
 % =========================================================================
-clear; clc;
-
-
 %% 1. Parametry początkowe symulacji
 v_ego = 30;        % [m/s] Prędkość początkowa naszego pojazdu
-v_lead = 25;       % [m/s] Prędkość pojazdu poprzedzającego 
+v_lead = 5;       % [m/s] Prędkość pojazdu poprzedzającego 
 d_init = 200;      % [m] Dystans początkowy.
 
 %% 2. Parametry czujników i filtru 
