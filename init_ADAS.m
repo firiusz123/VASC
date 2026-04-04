@@ -5,7 +5,7 @@
 clear all;
 %% 1. Parametry początkowe symulacji
 v_ego = 40;        % [m/s] Prędkość początkowa naszego pojazdu
-v_lead = 0;       % [m/s] Prędkość pojazdu poprzedzającego 
+v_lead = 10;       % [m/s] Prędkość pojazdu poprzedzającego 
 d_init = 150;      % [m] Dystans początkowy.
 
 %% 2. Parametry czujników i filtru 
@@ -16,11 +16,14 @@ tau_radar = 0.02;       % [s] Stała czasowa filtru radaru.
 %% 3. Inne parametry
 ttc_threshold = 10;    % [s] Krytyczny czas do kolizji 
 sim_time = 40;
+%% AED PARAMETERS
+AED_overtake = 0;
+AED_overtake = boolean(AED_overtake);
 
 %% 4. Otwarcie i uruchomienie modelu
 %open_system("ADAS_System");
 %%
-load("fuzzy_in_workspace.mat");
+load("fuzzy_1.mat");
 %%
 out = sim("ADAS_System");
 
@@ -32,7 +35,7 @@ dist = sim1.dist.Data;
 ttc = sim1.ttc.Data;
 v_ego_data = sim1.v_ego.Data;
 breakingforce = sim1.breakingforce.Data;
-%%
+
 figure;
 subplot(2,2,1)
 plot(t,dist);
