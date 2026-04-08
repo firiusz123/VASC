@@ -14,7 +14,8 @@ fs = 100;               % [Hz] Częstotliwość próbkowania
 tau_radar = 0.02;       % [s] Stała czasowa filtru radaru. 
 
 %% 3. Inne parametry
-ttc_threshold = 15;    % [s] Krytyczny czas do kolizji 
+ttc_buffer = 1;    % [s] dodatkowy czas do minimalnego czasu hamowania
+max_deceleration = 8;
 sim_time = 40;
 %% AED PARAMETERS
 AED_overtake = 0;
