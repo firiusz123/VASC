@@ -4,9 +4,9 @@
 % =========================================================================
 
 %% 1. Parametry początkowe symulacji
-v_ego = 30;        % [m/s] Prędkość początkowa naszego pojazdu
+v_ego = 40;        % [m/s] Prędkość początkowa naszego pojazdu
 v_lead = 0;       % [m/s] Prędkość pojazdu poprzedzającego 
-d_init = 300;      % [m] Dystans początkowy.
+d_init = 150;      % [m] Dystans początkowy.
 
 %% 2. Parametry czujników i filtru 
 radar_max_range = 150;  % [m] Zasięg przedniego radaru 
@@ -20,7 +20,7 @@ sim_time = 40;
 AED_overtake = 0;
 AED_overtake = boolean(AED_overtake);
 decc_max = -8;
-decc_min = -4;
+decc_min = -8;
 decc_lead_max = -7;
 
 %% 4. Otwarcie i uruchomienie modelu
@@ -70,9 +70,9 @@ hold off;
 subplot(2,2,4)
 breakingforce = squeeze(breakingforce);
 plot(t,breakingforce)
-title("breaking force percent")
+title("breaking force")
 xlabel("Time [s]")
-ylabel("force percent [m/s^2]")
+ylabel("normalized breaking force  [0..1]")
 grid on;
 %%
 figure;
