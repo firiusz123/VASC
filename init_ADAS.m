@@ -5,8 +5,8 @@
 
 %% 1. Parametry początkowe symulacji
 v_ego = 40;        % [m/s] Prędkość początkowa naszego pojazdu
-v_lead = 0;       % [m/s] Prędkość pojazdu poprzedzającego 
-d_init = 150;      % [m] Dystans początkowy.
+v_lead = 20;       % [m/s] Prędkość pojazdu poprzedzającego 
+d_init = 25;      % [m] Dystans początkowy.
 
 %% 2. Parametry czujników i filtru 
 radar_max_range = 150;  % [m] Zasięg przedniego radaru 
@@ -14,7 +14,8 @@ fs = 100;               % [Hz] Częstotliwość próbkowania
 tau_radar = 0.02;       % [s] Stała czasowa filtru radaru. 
 
 %% 3. Inne parametry
-ttc_threshold = 15;    % [s] Krytyczny czas do kolizji 
+minimal_breaking_time_buffer = 3;    % [s] Krytyczny czas do kolizji 
+max_deceleration = 8;
 sim_time = 40;
 %% AED PARAMETERS
 AED_overtake = 0;
