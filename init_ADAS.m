@@ -4,8 +4,8 @@
 % =========================================================================
 
 %% 1. Parametry początkowe symulacji
-v_ego = 20;        % [m/s] Prędkość początkowa naszego pojazdu
-v_lead = 10;       % [m/s] Prędkość pojazdu poprzedzającego 
+v_ego = 30;        % [m/s] Prędkość początkowa naszego pojazdu
+v_lead = 0;       % [m/s] Prędkość pojazdu poprzedzającego 
 d_init = 300;      % [m] Dystans początkowy.
 
 %% 2. Parametry czujników i filtru 
@@ -21,7 +21,7 @@ AED_overtake = 0;
 AED_overtake = boolean(AED_overtake);
 decc_max = -8;
 decc_min = -4;
-decc_lead_max = -8;
+decc_lead_max = -7;
 
 %% 4. Otwarcie i uruchomienie modelu
 %open_system("ADAS_System");
@@ -61,12 +61,14 @@ title("Our car velocity")
 xlabel("Time [s]")
 ylabel("velocity [m/s]")
 hold on;
-v_lead_1 = t .* v_lead;
+v_lead_1 = ones(1,length(t));
+v_lead_1 = v_lead_1 * v_lead;
 plot(t,v_lead_1)
 grid on;
 hold off;
 
 subplot(2,2,4)
+breakingforce = squeeze(breakingforce);
 plot(t,breakingforce)
 title("breaking force percent")
 xlabel("Time [s]")
