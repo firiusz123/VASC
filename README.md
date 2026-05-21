@@ -178,3 +178,5 @@ The modular architecture allows developers to modify parameters and introduce fe
 2. **Aquaplaning Mitigation Modalities:** Tracking individual wheel-slip differentials to detect aquaplaning risks ($\mu \approx 0.05$), replacing sharp spike stops with progressive speed reductions to restore tire contact patches[cite: 362, 368, 372].
 3. **Smooth Stop Adjustments ("Limousine Mode"):** Utilizing extra inputs such as "available time reserve" ($TTC - TTC_{threshold}$) and rate limiters to bound acceleration derivatives (jerk limiting), minimizing passenger discomfort when conditions allow.
 4. **Multi-Sensor Weather Data Fusion:** Incorporating deep optical vision configurations to cross-examine sensor matrices under adverse weather conditions.
+
+> 📌 **Note on Documentation:** This README was generated with the assistance of an LLM based on the comprehensive technical report located in the `docs/` directory. For precise mathematical derivations, tuning details, and full engineering rationale, it is highly recommended to refer directly to the [MathsDosentWork_VASC.pdf](./docs/MathsDosentWork_VASC.pdf) file.
